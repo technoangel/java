@@ -1,0 +1,44 @@
+package com.technoangel.json;
+
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.json.simple.*;
+import org.json.simple.parser.*;
+
+import org.junit.*;
+
+public class JsonBasicTester {
+
+	public static final String JSON_FILE="./source.json";
+	
+	public JSONObject buildJsonObject() {
+		JSONParser parser = new JSONParser();
+		JSONObject jsonObject = null;
+		try {
+			jsonObject = (JSONObject) parser.parse(new FileReader(JSON_FILE));
+		} catch (IOException | ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonObject;
+	}
+	
+	@Test
+	public void testJsonCanBeParsed() {
+		JsonBasicTester jbt = new JsonBasicTester();
+		JSONObject jo = jbt.buildJsonObject();
+		Assert.assertNotEquals(jo, null);
+		System.out.println(jo);
+	}
+	
+	@Test
+	public void testParsedContents() {
+		JsonBasicTester jbt = new JsonBasicTester();
+		JSONObject jo = jbt.buildJsonObject();
+		Assert.assertNotEquals(jo, null);
+	}
+	}
+}

@@ -1,0 +1,22 @@
+package com.technoangel.threads;
+
+public class ThreadJoinTest {
+
+	public static void main(String[] args) {
+		Thread t1 = new ThreadTester("Thread Single");
+		Thread t2 = new ThreadTester("Thread Double");
+		Thread t3 = new ThreadTester("Thread Triple");
+		
+		t1.start();
+		try {
+			t1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		t2.start();
+		t3.start();
+	}
+
+}

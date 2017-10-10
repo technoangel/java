@@ -1,0 +1,12 @@
+package com.technoangel.threads;
+
+public class ThreadTester extends Thread {
+	public ThreadTester(String name) {
+		super(name);
+	}
+
+	@Override
+	public void run() {
+		System.out.println("Heya");
+	}
+}

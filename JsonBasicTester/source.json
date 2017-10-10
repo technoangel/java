@@ -1,0 +1,12 @@
+{
+	"id":1,
+	"name":"Eric Alsheimer",
+	"permanent":true,
+	"address":{
+			"street":"Fairfax",
+			"city":"VA",
+			"zipcode":"22222"
+		},
+	"phoneNumbers":[4045551212],
+	"role":"Developer"
+}

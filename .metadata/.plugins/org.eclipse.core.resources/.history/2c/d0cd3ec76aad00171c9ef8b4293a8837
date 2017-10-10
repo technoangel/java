@@ -1,0 +1,26 @@
+package com.technoangel.hackerrank;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class BirthdayCake {
+
+	public Integer solveInvites(int va, int vA, int vB) {
+		return 2;
+	}
+	
+	@Test
+	public void verifyCakeSlices() {
+		int va = 1;
+		int vA = 5;
+		int vB = 10;
+		
+		BirthdayCake bc = new BirthdayCake();
+		assertEquals(bc.solveInvites(va, vA, vB), 2);
+	}
+	
+	public static void main(String[] args) {
+	
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.technoangel.interview;
+
+public class ReverseNumber {
+
+	public 
+	public static void main(String[] args) {
+		Integer number = 17868;
+		ReverseNumber rn = new ReverseNumber();
+		System.out.println(number + " => " rn.reverse(number));
+
+	}
+
+}

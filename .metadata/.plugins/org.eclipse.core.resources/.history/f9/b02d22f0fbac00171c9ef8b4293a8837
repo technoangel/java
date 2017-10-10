@@ -1,0 +1,44 @@
+package com.technocangel.interview;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class DuplicateNumbers {
+	
+	public List<Integer> numbers;
+	
+	public DuplicateNumbers(List<Integer> numbers) {
+		this.numbers = numbers;
+	}
+	
+	public List<Integer> findDuplicates() {
+		HashMap<Integer, Integer> hm = new HashMap();
+		for (int num:numbers) {
+			if (!hm.containsKey(num)) {
+				hm.put(num, new Integer(0));
+			}
+			Integer val = hm.get(num);
+			hm.put(num, val+1);
+		}
+		List<Integer> dups = new ArrayList<Integer>();
+		for (Integer num:hm.keySet()) {
+			if (hm.get(num) > 1) {
+				dups.add(hm.get(num));
+			}
+		}
+		return dups;
+	}
+
+	public static void main(String[] args) {
+		List<Integer> numbers = new ArrayList<Integer>();
+		for(int i = 0; i <= 30; i++) {
+			numbers.add(i);
+		}
+		numbers.add(22);
+		DuplicateNumbers dn = new DuplicateNumbers(numbers);
+		System.out.println("Duplicate Numbers: " + dn.findDuplicates());
+
+	}
+
+}

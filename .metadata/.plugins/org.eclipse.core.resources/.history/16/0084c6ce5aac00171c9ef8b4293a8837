@@ -1,0 +1,9 @@
+package com.technoangel.threads;
+
+public class Countdown {
+	public void printCount() {
+		for(int i = 10; i > 1; i++) {
+			System.out.println(Thread.currentThread().getName() + ": " + i);
+		}
+	}
+}

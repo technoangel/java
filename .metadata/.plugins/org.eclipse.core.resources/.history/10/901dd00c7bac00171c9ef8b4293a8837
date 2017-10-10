@@ -1,0 +1,5 @@
+package com.technoangel.json;
+
+public class Person {
+
+}

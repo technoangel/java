@@ -1,0 +1,1 @@
+dbUrl = jdbc:postgresql://localhost/company

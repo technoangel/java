@@ -1,0 +1,17 @@
+package com.technoangel.executor;
+
+public class WorkerThread implements Runnable {
+
+	public String message;
+	
+	public WorkerThread(String message) {
+		message = message;
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

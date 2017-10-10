@@ -1,0 +1,36 @@
+package com.technoangel.interview;
+
+public class Deadlock {
+
+	String str1 = "Java";
+	String str2 = "Unix";
+	
+	Runnable r1 = () -> {
+		while(true) {
+			synchronized(str1) {
+				synchronized(str2) {
+					System.out.println(str1 + str2);
+				}
+			}
+		}
+	};
+	
+	Runnable r2 = () -> {
+		while(true) {
+			synchronized(str1) {
+				synchronized(str2) {
+					System.out.println(str1 + str2);
+				}
+			}
+		}
+	};
+	
+	Thread t1 = new Thread(r1, str1);
+	Thread t2 = new Thread(r2, str2);
+	
+	public static void main(String[] args) {
+		Deadlock myDeadlock = new Deadlock();
+		myDeadlock.t1.start();
+		myDeadlock.t2.start();
+	}
+}
