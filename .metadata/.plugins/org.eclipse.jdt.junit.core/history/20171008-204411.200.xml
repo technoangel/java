@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="JsonBasicTester" project="JsonBasicTester" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.technoangel.json.JsonBasicTester" time="0.008">
-    <testcase name="testPrintEmployee" classname="com.technoangel.json.JsonBasicTester" time="0.007"/>
-    <testcase name="testJsonCanBeParsed" classname="com.technoangel.json.JsonBasicTester" time="0.0"/>
-    <testcase name="testParsedAddress" classname="com.technoangel.json.JsonBasicTester" time="0.001"/>
-    <testcase name="testParsedContents" classname="com.technoangel.json.JsonBasicTester" time="0.0"/>
-  </testsuite>
-</testrun>

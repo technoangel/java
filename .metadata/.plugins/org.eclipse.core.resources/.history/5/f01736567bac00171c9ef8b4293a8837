@@ -1,9 +1,0 @@
-package com.technoangel.json;
-
-public class JsonBasicTester {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

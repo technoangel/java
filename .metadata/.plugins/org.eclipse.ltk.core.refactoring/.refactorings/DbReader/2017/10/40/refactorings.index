@@ -1,4 +1,0 @@
-1507399658615	Extract constant 'DB_PROPERTIES'
-1507399667530	Extract constant 'DB_URL'
-1507399673867	Extract constant 'DB_USER'
-1507399681101	Extract constant 'DB_PASSWORD'
