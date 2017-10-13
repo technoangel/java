@@ -16,11 +16,18 @@ public class Reducer {
 		System.out.println("-------------------------");
 	}
 	
-	public void reduceArrays(double[][] array, BinaryOperator<Double> operation) {
-		Reducer.displayArray(array);
+	public DoubleStream streamifyArray(double[][] array) {
+		return Arrays.stream(array).flatMapToDouble(x -> Arrays.stream(x));
+	}
+	
+	public Double reduceArrays(double[][] array, BinaryOperator<Double> operation) {
 		
-		DoubleStream stream = Arrays.stream(array)
-				.flatMapToDouble(x -> Arrays.stream(x));
-		System.out.println(stream.reduce(0, (double x, double y) -> operation.apply(x, y)));
+		// Arrays.stream x 2 converts a multidimensional array
+		// flatMapToDouble converts the elements
+		DoubleStream stream = streamifyArray(array);
+		
+		// answer reduces based on user function
+		Double answer = stream.reduce(0, (double x, double y) -> operation.apply(x, y));
+		return answer;
 	}
 }
