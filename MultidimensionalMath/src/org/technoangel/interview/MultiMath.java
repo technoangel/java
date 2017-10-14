@@ -22,12 +22,7 @@ public class MultiMath {
 		
 		// Five: Tell the Reducer to process the array with the operation
 		Double answer = reducer.reduceArrays(array, operation);
-		System.out.println(answer);
 		
-		// Alternate example for my practice
-		String[] stringArray = {"Apple", "Cherry"};
-		Stream<String> stringStream = Arrays.stream(stringArray)
-				.map((String x) -> x.toUpperCase());
-		stringStream.forEach(element -> System.out.println(element));
+		System.out.println(answer);
 	}
 }
