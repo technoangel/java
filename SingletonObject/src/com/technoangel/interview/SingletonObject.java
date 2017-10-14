@@ -19,7 +19,7 @@ public class SingletonObject {
 	}
 	
 	public static void main(String[] args) {
-		SingletonObject oj = getInstance();
+		SingletonObject oj = SingletonObject.getInstance();
 		oj.testMe();
 	}
 
