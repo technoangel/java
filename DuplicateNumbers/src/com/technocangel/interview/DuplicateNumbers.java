@@ -41,16 +41,21 @@ public class DuplicateNumbers {
 	}
 
 	public static void main(String[] args) {
+		// Create a list of numbers from 0 to 30 inclusive
 		List<Integer> numbers = new ArrayList<Integer>();
-		for(int i = 0; i <= 30; i++) {
-			numbers.add(i);
-		}
+		for(int i = 0; i <= 30; i++) { numbers.add(i); }
+		
+		// Add some numbers manually
 		numbers.add(22);
 		numbers.add(43);
 		numbers.add(10);
+		
+		// Find the duplicate numbers
 		DuplicateNumbers dn = new DuplicateNumbers(numbers);
-		System.out.println("Duplicate Numbers: " + dn.findDuplicates());
-
+		List<Integer> answer = dn.findDuplicates();
+		
+		// Display the answer
+		System.out.println("Duplicate Numbers: " + answer);
 	}
 
 }
