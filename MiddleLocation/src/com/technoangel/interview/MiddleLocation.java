@@ -1,12 +1,19 @@
 package com.technoangel.interview;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MiddleLocation {
 	
-	public static Integer orderSum(List<Integer> numbers, Integer start, Integer stop) {
+	/**
+	 * Sum array of numbers between two indices
+	 * @param numbers array of numbers
+	 * @param start index to start summing
+	 * @param stop index to stop summing
+	 * @return
+	 */
+	private static Integer orderSum(List<Integer> numbers, Integer start, Integer stop) {
 		Integer sum = 0;
 		for (int i = start; i < stop; i++) {
 			sum += numbers.get(i);
@@ -14,43 +21,62 @@ public class MiddleLocation {
 		return sum;
 	}
 	
-	public static Integer precSum(List<Integer> numbers, Integer index) {
+	/**
+	 * Sum all numbers in array from start to beginning of array
+	 * @param numbers array of numbers
+	 * @param index point to stop summing
+	 * @return
+	 */
+	public static Integer precedingSum(List<Integer> numbers, Integer index) {
 		return orderSum(numbers, 0, index);
 	}
 	
-	public static Integer succSum(List<Integer> numbers, Integer index) {
+	/**
+	 * Sum all numbers in array after index until end of array
+	 * @param numbers array of numbers
+	 * @param index starting position
+	 * @return
+	 */
+	
+	public static Integer succeedingSum(List<Integer> numbers, Integer index) {
 		return orderSum(numbers, index, numbers.size());
 	}
 	
-	public static Integer findMiddle(List<Integer> numbers) {
+	/**
+	 * Find the index where the sum on the left equals the sum on the right, and provide feedback either way.
+	 * @param numbers The array of numbers that need to be processed
+	 * @return The determined median of numbers
+	 */
+	public static void findMiddle(List<Integer> numbers) {
 		Integer index;
+		
+		// Loop through the numbers
 		for(index = 0; index < numbers.size(); index++) {
-			Integer prec = precSum(numbers, index);
-			Integer succ = succSum(numbers, index);
+			// Determine preceding sum
+			Integer sumPreceding = precedingSum(numbers, index);
 			
-			if (prec < succ) { continue; }
-			else if (prec == succ) {
-				System.out.println("Middle at index: " + index);
+			// Determine succeeding sum
+			Integer sumSucceeding = succeedingSum(numbers, index);
+			
+			// If 
+			if (sumPreceding < sumSucceeding) { continue; }
+			else if (sumPreceding == sumSucceeding) {
+				System.out.println("Middle is at index: " + index + ", both sides are " + sumPreceding);
 				break;
 			} else {
-				Integer oldPrec = precSum(numbers, index - 1);
-				Integer oldSucc = succSum(numbers, index - 1);
+				Integer oldPreceding = precedingSum(numbers, index - 1);
+				Integer oldSucceeding = succeedingSum(numbers, index - 1);
 				System.out.println("No answer because:");
-				System.out.println(oldPrec + " is smaller than " + oldSucc + " for index " + (index-1));
-				System.out.println(prec + " is larger than " + succ + " for index " + index);
+				System.out.println(oldPreceding + " is smaller than " + oldSucceeding + " for index " + (index-1));
+				System.out.println(oldSucceeding + " is larger than " + sumSucceeding + " for index " + index);
 				break;
 			}
 		}
-		return index;
 	}
 
 	public static void main(String[] args) {
-		List<Integer> numbers = new ArrayList<Integer>();
-//		for(int i = 1; i < 30; i++) {
-//			numbers.add(i);
-//		}
-		List<Integer> num = new ArrayList<Integer>(Arrays.asList(2, 4, 4, 5, 4, 1));
-		System.out.println(MiddleLocation.findMiddle(num));
+		List<Integer> num = Arrays.asList(2, 4, 4, 5, 4, 1);
+		System.out.println(num);
+		MiddleLocation.findMiddle(num);
 	}
-
 }
