@@ -16,7 +16,7 @@ public class PerfectNumber {
 	 */
 	public List<Integer> findDivisors(Integer number) {
 		List<Integer> divisors = new ArrayList<Integer>();
-		for(int i = 1; i < number; i++) {
+		for(int i = 1; i < (number / 2) + 1; i++) {
 			if (number % i == 0) {
 				divisors.add(i);
 			}
