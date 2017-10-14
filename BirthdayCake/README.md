@@ -9,7 +9,7 @@ Leha wants to know how many people he should invite to his party if he has a cak
 
 #### Input Format
 
-The first line contains three space-separated integers describing the respective values of , , and .
+The first line contains three space-separated integers describing the respective values of the slice fraction numerator, the slice fraction denominator, and the cake size (in arbitrary units).
 
 #### Constraints
 
