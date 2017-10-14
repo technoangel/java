@@ -17,4 +17,4 @@ It is guaranteed that the answer is an integer.
 
 #### Output Format
 
-Print a single integer denoting , the number of people he should invite to his party.
+Print a single integer denoting the number of people he should invite to his party.
